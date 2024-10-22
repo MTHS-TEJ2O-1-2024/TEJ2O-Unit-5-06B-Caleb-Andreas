@@ -7,6 +7,7 @@ This module is a Micro:bit MicroPython program that can measure distance with a 
 from microbit import *
 from time import sleep
 
+
 class HCSR04:
     # This class abstracts out the functionality of the HC-SR04 and
     # returns distance in mm.
