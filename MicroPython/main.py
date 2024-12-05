@@ -1,6 +1,6 @@
 """
 Created by: Caleb Andreas
-Created on: Oct 2024
+Created on: Dec 2024
 This module is a Micro:bit MicroPython program that can measure distance with a sonar.
 """
 
@@ -54,12 +54,18 @@ class HCSR04:
 
 # Variables.
 sonar = HCSR04()
+distance_To_Object = 1
+
+# Clean up.
+display.clear()
 display.show(Image.HAPPY)
 
 # Find distance on a button press.
 while True:
     if button_a.is_pressed():
         display.clear()
-        display.show(sonar.distance_mm() / 10)
+        distance_To_Object = sonar.distance_mm()
+        display.show(int(sonar.distance_mm() / 10))
         sleep(1000)
+        display.clear()
         display.show(Image.HAPPY)
